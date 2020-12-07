@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.vaanalvesr";
+option java_outer_classname = "AvatarAdvancedBase";
+
+package com.vaanalvesr;
+
+import "avatarSimpleBase.proto";
+
+service AvatarAdvancedBaseService {
+  rpc findAvatarByNation (AvatarByNationRequest) returns (AvatarsReply) {}
+}
+
+message AvatarByNationRequest {
+  string nation = 1;
+}

@@ -1,0 +1,42 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.vaanalvesr";
+option java_outer_classname = "AvatarSimpleBase";
+
+package com.vaanalvesr;
+//import "google/protobuf/empty.proto"; HOW IMPORT ANOTHER PROTO FILES
+
+service AvatarSimpleBaseService {
+  rpc findAllNations(Empty) returns (NationsReply) {}
+  rpc findAllElements(Empty) returns (ElementsReply) {}
+  rpc findAllAvatars(Empty) returns (AvatarsReply) {}
+}
+
+message NationsReply {
+  repeated NationReply nations = 1;
+}
+
+message ElementsReply {
+  repeated ElementReply elements = 1;
+}
+
+message AvatarsReply {
+  repeated AvatarReply avatars = 1;
+}
+
+message NationReply {
+  string name = 1;
+  string symbol = 2;
+}
+
+message ElementReply {
+  string name = 1;
+}
+
+message AvatarReply {
+  string name = 1;
+  NationReply nation = 2;
+  repeated ElementReply elements = 3;
+}
+
+message Empty {}

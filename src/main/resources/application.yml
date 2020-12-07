@@ -1,0 +1,9 @@
+micronaut:
+  application:
+    name: avatarAdvancedBase
+
+grpc:
+  channels:
+    simple:
+      address: 'localhost:50052'
+      plaintext: true
