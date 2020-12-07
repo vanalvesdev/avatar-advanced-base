@@ -22,5 +22,6 @@ public class AvatarAdvancedBaseService extends AvatarAdvancedBaseServiceGrpc.Ava
                 .collect(Collectors.toList());
 
         responseObserver.onNext(AvatarsReply.newBuilder().addAllAvatars(filteredList).build());
+        responseObserver.onCompleted();
     }
 }
